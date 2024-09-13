@@ -7,17 +7,6 @@
 int print_board(bool board_inp[], int size);
 int get_board_status(bool board_inp[], const int size);
 
-/**
- * Intro:
- * The code will print a board of x bits (power of 2), and place a key in a random slot.
- * Your task is to flip exactly ONE bit, and one bit only, in order to make the board "pont" to the right bit.
- * The board counts as such:
- * Least significant integer in the constructed bit, is the sum of all bit positions where the least significant
- * position of the bit-position is one AND where the value of the board is one.
- * This is then shifted, to look at the second-to-least significant position, and so on.
- * This is done for all tiles of the board.
- * @return Exit code
- */
 int main(void)
 {
     int board_size = 16;        // Has to be power of 2, otherwise impossible
@@ -25,7 +14,6 @@ int main(void)
     srand(time(NULL));              // Seed rand
     bool board_state[board_size];           // Randomize board
     for (int i = 0; i < board_size; i++) { board_state[i] = rand() % 2; }
-
 
     const int key_pos = rand() % board_size;      // Place the key
 
