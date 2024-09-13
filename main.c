@@ -7,9 +7,10 @@
 int print_board(bool board_inp[], int size);
 int get_board_status(bool board_inp[], const int size);
 
+
 int main(void)
 {
-    int board_size = 16;        // Has to be power of 2, otherwise impossible
+    int board_size = 64;        // Has to be power of 2, otherwise impossible
 
     srand(time(NULL));              // Seed rand
     bool board_state[board_size];           // Randomize board
@@ -66,19 +67,35 @@ int get_board_status(bool board_inp[], const int size) {
     int bits_count[req_bits];  // Array to store counts for log2 of the size
     int constructed_number = 0;  // Variable to store the final number
 
+    // Initialize bits_count array to zero
+    for (int i = 0; i < req_bits; i++) {
+        bits_count[i] = 0;
+    }
+
     /* for each place in the board, loop over every bit
      * If the least significant is a one, add to the relevant groups. */
+    // for (int i = 0; i < size; i++) {
+    //     int current_board_pos = i;
+    //     int bit_position = 0;
+    //     while (current_board_pos > 0) {
+    //         if ((current_board_pos & 1) && board_inp[i] == true) {        // Check least significant
+    //             if (bit_position < req_bits) {                            // Handle up to `req_bits` bits
+    //                 bits_count[bit_position]++;                    // Increment relevant bit count
+    //             }
+    //         }
+    //         current_board_pos >>= 1;            // shift one to the right (div by 2)
+    //         bit_position++;
+    //     }
+    // }
+
+    // Count the number of 1s in each bit position
     for (int i = 0; i < size; i++) {
         int current_board_pos = i;
-        int bit_position = 0;
-        while (current_board_pos > 0) {
-            if ((current_board_pos & 1) && board_inp[i] == true) {        // Check least significant
-                if (bit_position < req_bits) {                            // Handle up to `req_bits` bits
-                    bits_count[bit_position]++;                    // Increment relevant bit count
-                }
+        for (int bit_position = 0; bit_position < req_bits; bit_position++) {
+            if ((current_board_pos & 1) && board_inp[i]) {  // Check if the bit is 1 and the board position is true
+                bits_count[bit_position]++;
             }
-            current_board_pos >>= 1;            // shift one to the right (div by 2)
-            bit_position++;
+            current_board_pos >>= 1;  // Shift right by 1
         }
     }
 
