@@ -41,6 +41,8 @@ int main(void)
     // Check if player won
     key_pos == get_board_status(board_state, board_size) ? printf("You win!\n") : printf("You lose!\n");
 
+    scanf("%d", &chosen_bit);
+
     return EXIT_SUCCESS;
 }
 
@@ -52,7 +54,7 @@ int main(void)
  */
 int print_board(bool board_inp[], const int size) {
     const int s = (int)sqrt(size);
-    for (int i = 1; i < size + 1; i++) { printf((i % s) == 0 ? "%d\n\n" : "%d\t", board_inp[i - 1]); }
+    for (int i = 1; i < size + 1; i++) { printf(i % s == 0 ? "%d\n\n" : "%d\t", board_inp[i - 1]); }
     return EXIT_SUCCESS;
 }
 
@@ -74,21 +76,6 @@ int get_board_status(bool board_inp[], const int size) {
 
     /* for each place in the board, loop over every bit
      * If the least significant is a one, add to the relevant groups. */
-    // for (int i = 0; i < size; i++) {
-    //     int current_board_pos = i;
-    //     int bit_position = 0;
-    //     while (current_board_pos > 0) {
-    //         if ((current_board_pos & 1) && board_inp[i] == true) {        // Check least significant
-    //             if (bit_position < req_bits) {                            // Handle up to `req_bits` bits
-    //                 bits_count[bit_position]++;                    // Increment relevant bit count
-    //             }
-    //         }
-    //         current_board_pos >>= 1;            // shift one to the right (div by 2)
-    //         bit_position++;
-    //     }
-    // }
-
-    // Count the number of 1s in each bit position
     for (int i = 0; i < size; i++) {
         int current_board_pos = i;
         for (int bit_position = 0; bit_position < req_bits; bit_position++) {

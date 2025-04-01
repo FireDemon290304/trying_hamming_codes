@@ -1,3 +1,19 @@
 # ninja log v6
 6	91	7479449595536685	CMakeFiles/trying_hamming_codes.dir/main.c.obj	11ee926e7f26cc9c
 91	175	7479449596386685	trying_hamming_codes.exe	f6881e93584990ec
+3	120	7479488786946890	CMakeFiles/trying_hamming_codes.dir/main.c.obj	11ee926e7f26cc9c
+121	219	7479488788106889	trying_hamming_codes.exe	f6881e93584990ec
+12	467	7479982998358580	CMakeFiles/trying_hamming_codes.dir/main.c.obj	11ee926e7f26cc9c
+467	830	7479983002903377	trying_hamming_codes.exe	f6881e93584990ec
+4	91	7479989122813852	CMakeFiles/trying_hamming_codes.dir/main.c.obj	11ee926e7f26cc9c
+91	183	7479989123690924	trying_hamming_codes.exe	f6881e93584990ec
+4	96	7479989383609601	CMakeFiles/trying_hamming_codes.dir/main.c.obj	11ee926e7f26cc9c
+96	185	7479989384536503	trying_hamming_codes.exe	f6881e93584990ec
+4	94	7479989998928292	CMakeFiles/trying_hamming_codes.dir/main.c.obj	11ee926e7f26cc9c
+95	180	7479989999828359	trying_hamming_codes.exe	f6881e93584990ec
+8	110	7479990378742642	CMakeFiles/trying_hamming_codes.dir/main.c.obj	11ee926e7f26cc9c
+110	202	7479990379769208	trying_hamming_codes.exe	f6881e93584990ec
+3	87	7479990705545350	CMakeFiles/trying_hamming_codes.dir/main.c.obj	11ee926e7f26cc9c
+87	207	7479990706387606	trying_hamming_codes.exe	f6881e93584990ec
+4	90	7479991034419758	CMakeFiles/trying_hamming_codes.dir/main.c.obj	11ee926e7f26cc9c
+91	228	7479991035286895	trying_hamming_codes.exe	f6881e93584990ec
